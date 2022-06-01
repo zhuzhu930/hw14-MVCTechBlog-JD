@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>MVC Tech Blog</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Dashboard</li>
+          <li>Login</li>
+          <li>Logout</li>
+        </ul>
+      </nav>
+      <h1>The Tech Blog</h1>
+    </header>
+    <main>
+      <section class="grid" id="blogPost">
+        <div id="blogTitleAndTime">
+          <h2>Blog Title</h2>
+          <p>Posted by: name and date</p>
+        </div>
+        <div id="blogTextArea">
+          <p>Blog Post Text Area</p>
+        </div>
+      </section>
+
+      <section class="grid" id="loginPage">
+        <h2>Login</h2>
+        <form>
+          <div class="mb-3">
+            <label for="userName" class="form-label">Username</label>
+            <input type="username" class="form-control" id="usernameInput" />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" />
+          </div>
+          <button type="submit" class="btn btn-primary">Login!</button>
+          <p><a href="#">Sign up instead</a></p>
+        </form>
+      </section>
+
+      <section class="grid" id="signupPage">
+        <h2>Sign Up</h2>
+        <form>
+          <div class="mb-3">
+            <label for="userName" class="form-label">Username</label>
+            <input type="username" class="form-control" id="usernameInput" />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up!</button>
+          <p><a href="#">Login instead</a></p>
+        </form>
+      </section>
+
+      <section class="grid" id="dashboardPage">
+        <!-- <div id="blogTitleAndTime">
+          <h2>Blog Title</h2>
+          <p>Posted by: name and date</p>
+        </div>
+        <div id="blogTextArea">
+          <p>Blog Post Text Area</p>
+        </div> -->
+        <button class="btn newPostBtn">+ New Post</button>
+      </section>
+
+      <section class="grid" id="singleBlog">
+        <div id="blogTitleAndTime">
+          <h2>Blog Title</h2>
+          <p>Posted by: name and date</p>
+        </div>
+        <div id="blogTextArea">
+          <p>Blog Post Text Area</p>
+        </div>
+        <div id="commentArea">
+          <form>
+            <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <input class="form-control" id="commentArea" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
