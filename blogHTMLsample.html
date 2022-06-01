@@ -25,19 +25,21 @@
       <h1>The Tech Blog</h1>
     </header>
     <main>
-      <section class="grid" id="blogPost">
-        <div id="blogTitleAndTime">
+      <section id="blogPost">
+        <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
           <h2>Blog Title</h2>
           <p>Posted by: name and date</p>
         </div>
-        <div id="blogTextArea">
-          <p>Blog Post Text Area</p>
+        <div class="flex">
+          <div id="blogTextArea">
+            <p>Blog Post Text Area</p>
+          </div>
         </div>
       </section>
 
-      <section class="grid" id="loginPage">
-        <h2>Login</h2>
-        <form>
+      <section id="loginPage">
+        <h2 class="sectionHead">Login</h2>
+        <form class="flex">
           <div class="mb-3">
             <label for="userName" class="form-label">Username</label>
             <input type="username" class="form-control" id="usernameInput" />
@@ -51,9 +53,9 @@
         </form>
       </section>
 
-      <section class="grid" id="signupPage">
-        <h2>Sign Up</h2>
-        <form>
+      <section id="signupPage">
+        <h2 class="sectionHead">Sign Up</h2>
+        <form class="flex">
           <div class="mb-3">
             <label for="userName" class="form-label">Username</label>
             <input type="username" class="form-control" id="usernameInput" />
@@ -67,7 +69,7 @@
         </form>
       </section>
 
-      <section class="grid" id="dashboardPage">
+      <section id="dashboardPage">
         <!-- <div id="blogTitleAndTime">
           <h2>Blog Title</h2>
           <p>Posted by: name and date</p>
@@ -75,25 +77,28 @@
         <div id="blogTextArea">
           <p>Blog Post Text Area</p>
         </div> -->
+        <h2 class="sectionHead">Dashboard</h2>
         <button class="btn newPostBtn">+ New Post</button>
       </section>
 
-      <section class="grid" id="singleBlog">
-        <div id="blogTitleAndTime">
+      <section id="singleBlog">
+        <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
           <h2>Blog Title</h2>
           <p>Posted by: name and date</p>
         </div>
-        <div id="blogTextArea">
-          <p>Blog Post Text Area</p>
-        </div>
-        <div id="commentArea">
-          <form>
-            <div class="mb-3">
-              <label for="comment" class="form-label">Comment</label>
-              <input class="form-control" id="commentArea" />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+        <div class="flex">
+          <div id="blogTextArea">
+            <p>Blog Post Text Area</p>
+          </div>
+          <div id="commentArea">
+            <form>
+              <div class="mb-3">
+                <label for="comment" class="form-label">Comment</label>
+                <input class="form-control" id="commentArea" />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
