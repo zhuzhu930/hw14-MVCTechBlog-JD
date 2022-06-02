@@ -1,17 +1,16 @@
 //writing User model for the database
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-//double check the connection
 const sequelize = require('../config/connection');
 
-//Define columns for User
+//Define class User
 class User extends Model {
   //checkpassword first
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
+//Define columns
 User.init(
   {
     id: {
@@ -23,6 +22,9 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        isAlphanumeric: true,
+      },
     },
     //In my login, I didn't define email.
     // email: {
