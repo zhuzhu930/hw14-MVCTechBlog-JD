@@ -9,10 +9,23 @@ Plan:
 
 - schema.sql should have one database: blogs_db---done
 - models:
+
   - User model, with (id, username, password), id will be a primary key
-  - Blog model, with (id, title, content, author_name, created_date, user_id); user_id will be a foreign key;
+    ---done
+  - Blog model, with (id, title, content, author, created_date, user_id); user_id will be a foreign key;
   - comment model, with (id, comment, user_id, blog_id);
     user_id is a foreign key, and blog_id is a foreign key;
+
+  - write index.js in model:
+    one user has many blogs,
+    one blog has one user via user_id
+
+  one user has many comment,
+  one comment has one user via user_id
+
+  one blog has many comment,
+  one comment has one blog via blog_id
+
 - based on the models, write userData.json and blogData.json and seeds.js to seed to database.
 
 3. separate sample html into handlebars, including partials.
