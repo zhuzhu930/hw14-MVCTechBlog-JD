@@ -12,11 +12,11 @@ Plan:
 
   - User model, with (id, username, password), id will be a primary key
     ---done
-  - Blog model, with (id, title, content, author, created_date, user_id); user_id will be a foreign key;
+  - Blog model, with (id, title, content, author, created_date, user_id); user_id will be a foreign key;---done
   - comment model, with (id, comment, user_id, blog_id);
-    user_id is a foreign key, and blog_id is a foreign key;
+    user_id is a foreign key, and blog_id is a foreign key; ---done
 
-  - write index.js in model:
+  - write index.js in model ---done
     one user has many blogs,
     one blog has one user via user_id
 

@@ -27,7 +27,7 @@ Blog.init(
       allowNull: true,
     },
     created_date: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
         isDate: true,

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "CSS",
+    "content": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
+    "author": "Jon",
+    "created_date": "2010-12-07",
+    "user_id": 1
+  },
+  {
+    "title": "HTML",
+    "content": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.",
+    "author": "Cersei",
+    "created_date": "2018-2-07",
+    "user_id": 4
+  },
+  {
+    "title": "MySQL",
+    "content": "MySQL is an open-source relational database management system. Its name is a combination of \"My\", the name of co-founder Michael Widenius's daughter, and \"SQL\", the abbreviation for Structured Query Language.",
+    "author": "Bran",
+    "created_date": "2017-3-25",
+    "user_id": 2
+  },
+  {
+    "title": "Express.js",
+    "content": "Express.js, or simply Express, is a back end web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.",
+    "author": "Tyrion",
+    "created_date": "2022-6-1",
+    "user_id": 3
+  },
+  {
+    "title": "Node.js",
+    "content": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+    "author": "Dany",
+    "created_date": "2016-8-3",
+    "user_id": 5
+  }
+]
