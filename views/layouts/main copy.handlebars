@@ -17,14 +17,19 @@
       <nav>
         <ul>
           <li class="menu"><a href="#">Home</a></li>
-          <li class="menu"><a href="#">Dashboard</a></li>
-          <li class="menu"><a href="#">Login</a></li>
+          <li class="menu"><a href="#dashboardPage">Dashboard</a></li>
+          {{#if logged_out}}
+          <li class="menu"><a href="#loginPage">Login</a></li>
+          {{/if}}
+          {{#if logged_in}}
           <li class="menu"><a href="#">Logout</a></li>
+          {{/if}}
         </ul>
       </nav>
       <h1>The Tech Blog</h1>
     </header>
     <main>
+      {{{body}}}
       {{!-- blog post page --}}
 
       {{!-- login page --}}
@@ -34,7 +39,7 @@
       {{!-- dashboardpage --}}
 
       {{!-- singleblogpage --}}
-      <section id="singleBlog">
+      {{!-- <section id="singleBlog">
         <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
           <h2>Blog Title</h2>
           <p>Posted by: name and date</p>
@@ -42,7 +47,7 @@
         <div class="blogTextArea" id="blogTextArea">
           <p>Blog Post Text Area</p>
         </div>
-      </section>
+      </section> --}}
       {{!-- comment page --}}
              
     </main>
