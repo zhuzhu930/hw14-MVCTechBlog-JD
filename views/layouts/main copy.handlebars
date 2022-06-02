@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <!-- <link rel="stylesheet" href="./public/css/jass.css" /> -->
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>MVC Tech Blog</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="menu"><a href="#">Home</a></li>
+          <li class="menu"><a href="#">Dashboard</a></li>
+          <li class="menu"><a href="#">Login</a></li>
+          <li class="menu"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+      <h1>The Tech Blog</h1>
+    </header>
+    <main>
+      {{!-- blog post page --}}
+      <section id="blogPost">
+        <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
+          <h2>Blog Title</h2>
+          <p>Posted by: name and date</p>
+        </div>
+        <div class="blogTextArea" id="blogTextArea">
+          <p>Blog Post Text Area</p>
+        </div>
+      </section>
+
+      {{!-- login page --}}
+      
+
+      {{!-- signup page --}}
+      <section id="signupPage">
+        <h2 class="sectionHead">Sign Up</h2>
+        <form class="flex form">
+          <div class="formInput flex">
+            <label for="userName" class="form-label">Username</label>
+            <input type="username" class="form-control" id="usernameInput" />
+          </div>
+          <div class="formInput flex">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up!</button>
+          <p><a href="#">Login instead</a></p>
+        </form>
+      </section>
+
+      {{!-- dashboardpage --}}
+      <section id="dashboardPage">
+        <h2 class="sectionHead">Dashboard</h2>
+        <div class="flex">
+          <button class="btn newPostBtn">+ New Post</button>
+        </div>
+      </section>
+
+      {{!-- singleblogpage --}}
+      <section id="singleBlog">
+        <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
+          <h2>Blog Title</h2>
+          <p>Posted by: name and date</p>
+        </div>
+        <div class="blogTextArea" id="blogTextArea">
+          <p>Blog Post Text Area</p>
+        </div>
+      </section>
+      {{!-- comment page --}}
+      <section>
+        <div class="flex">
+          <div id="commentArea">
+            <form class="flex form">
+              <div class="formInput flex">
+                <label for="comment" class="form-label">Comment</label>
+                <textarea
+                  name="commentArea"
+                  id="commentArea"
+                  cols="100"
+                  rows="10"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+             
+    </main>
+  </body>
+</html>

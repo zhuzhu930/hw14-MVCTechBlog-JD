@@ -1,17 +1,17 @@
-<h2>Login</h2>
-
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
-  </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
-
+<section id="loginPage">
+        <h2 class="sectionHead">Login</h2>
+        <form class="flex form">
+          <div class="formInput flex">
+            <label for="userName" class="form-label">Username</label>
+            <input type="username" class="form-control" id="usernameInput" />
+          </div>
+          <div class="formInput flex">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" />
+          </div>
+          <button type="submit" class="btn btn-primary">Login!</button>
+          <p><a href="#">Sign up instead</a></p>
+        </form>
+</section>
+{{!-- double check the script part --}}
 <script src="/js/login.js"></script>
