@@ -26,7 +26,7 @@ Plan:
   one blog has many comment,
   one comment has one blog via blog_id
 
-- based on the models, write userData.json and blogData.json and seeds.js to seed to database.
+- based on the models, write userData.json and blogData.json and seeds.js to seed to database. ---done
 
 3. separate sample html into handlebars, including partials.
 
