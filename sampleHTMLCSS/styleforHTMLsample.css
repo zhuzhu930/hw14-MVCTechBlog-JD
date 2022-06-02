@@ -12,6 +12,7 @@ body {
   font-family: "Pacifico", cursive;
   font-family: "Poppins", sans-serif;
   background-color: lightcyan;
+  min-height: 100vh;
 }
 
 main {
@@ -45,13 +46,13 @@ nav ul {
   font-size: larger;
   font-weight: bolder;
   text-align: center;
-  padding: 15px;
+  padding: 15px 32px;
   margin-right: 20px;
   text-decoration: none;
 }
 
 .menu a:hover {
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: solid 2px lightcyan;
   opacity: 80%;
 }
