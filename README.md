@@ -32,8 +32,10 @@ Plan:
 
 3. separate sample html into handlebars, including partials.
 
-- break out sample html into main, homepage and partials, by using handlebars.
+- break out sample html into main, homepage and partials, by using handlebars. ---mainly done, but need to test all files later
 
-4. write routes, to send correct page to certain stage.
+4. write js files in the public folder, including login.js, logout.js, probably signup.js and comment.js
 
-5. debug.
+5. write routes, to send correct page to certain stage.
+
+6. debug.
