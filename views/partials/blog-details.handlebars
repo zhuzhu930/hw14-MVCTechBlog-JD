@@ -1,11 +1,17 @@
-{{!-- singleBlogPage --}}
+{{!-- singleBlogPage Need to link the blog.id--}}
+{{!-- {{#each blogs as |blog|}} --}}
 <section id="singleBlog">
         <div class="sectionHead singleBlog" id="singleBlog">
           <h2>{{blog.title}}</h2>
           <p>Posted by: {{blog.author}} and {{blog.created_date}}</p>
         </div>
-        <hr class="solid">
-        <div class="relatedComment" id="relatedComment">
-          <p>{{comment.content}}</p>
+        <div>
+            <p>{{blog.content}}</p>
         </div>
 </section>
+<hr class="solid">
+{{!-- need to link blog_id to blog.id --}}
+<section class="sectionHead" id="relatedComment">
+        <p>{{comment.content}}</p>
+</section>
+{{!-- {{/each}} --}}

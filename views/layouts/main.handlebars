@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <!-- <link rel="stylesheet" href="./public/css/jass.css" /> -->
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>MVC Tech Blog</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="menu"><a href="#">Home</a></li>
+          <li class="menu"><a href="#dashboardPage">Dashboard</a></li>
+          <li class="menu"><a href="#loginPage">Login</a></li>
+          <li class="menu"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+      <h1>The Tech Blog</h1>
+    </header>
+    <main>
+      {{{body}}}
+      {{!-- blog post page --}}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
+      {{!-- login page --}}
 
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
+      {{!-- signup page --}}
+
+      {{!-- dashboardpage --}}
+
+      {{!-- singleBlogPage --}}
+
+      {{!-- comment page --}}
+             
+    </main>
     {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
+    <script src="/js/logout.js"></script>
     {{/if}}
-  </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
-
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
+  </body>
 </html>
