@@ -68,6 +68,10 @@ h1 {
   box-shadow: 8px 8px 4px 1px lightcyan;
 }
 
+hr.solid {
+  border-top: 3px solid darkblue;
+}
+
 section {
   /* max-width: 100; */
   /* padding-top: 30px; */

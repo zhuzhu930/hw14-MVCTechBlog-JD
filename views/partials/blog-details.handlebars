@@ -1,3 +1,11 @@
-<div class="blogTextArea" id="blogTextArea">
-    <p>{{blog.content}}</p>
-</div>
+{{!-- singleBlogPage --}}
+<section id="singleBlog">
+        <div class="sectionHead singleBlog" id="singleBlog">
+          <h2>{{blog.title}}</h2>
+          <p>Posted by: {{blog.author}} and {{blog.created_date}}</p>
+        </div>
+        <hr class="solid">
+        <div class="relatedComment" id="relatedComment">
+          <p>{{comment.content}}</p>
+        </div>
+</section>

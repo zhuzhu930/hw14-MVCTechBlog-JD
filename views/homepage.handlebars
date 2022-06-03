@@ -4,6 +4,8 @@
           <h2>{{blog.title}}</h2>
           <p>Posted by: {{blog.author}} and {{blog.created_date}}</p>
         </div>
-        {{blog-details}}
+        <div class="blogTextArea" id="blogTextArea">
+          <p>{{blog.content}}</p>
+        </div>
 </section>
 {{/each}}
