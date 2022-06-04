@@ -1,5 +1,7 @@
 {{#each}}
 <div class="singleComment" id="singleComment">
-    <p>{{comment.content}}</p>
+    <p><a href="/comment/{{id}}">
+        {{comment.content}}
+    </a></p>
 </div>
 {{/each}}

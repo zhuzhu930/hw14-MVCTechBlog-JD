@@ -1,11 +1,13 @@
 {{#each blogs as |blog| }}
 <section id="blogPost">
-        <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
+  <a href="/blog">
+    <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
           <h2>{{blog.title}}</h2>
           <p>Posted by: {{blog.author}} and {{blog.created_date}}</p>
         </div>
         <div class="blogTextArea" id="blogTextArea">
           <p>{{blog.content}}</p>
         </div>
+  </a>        
 </section>
 {{/each}}
