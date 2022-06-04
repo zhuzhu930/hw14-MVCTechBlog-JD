@@ -5,10 +5,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const blogData = await Blog.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
-    });
+    const blogData = await Blog.findAll();
 
     const blogs = blogData.map((project) => project.get({ plain: true }));
 
