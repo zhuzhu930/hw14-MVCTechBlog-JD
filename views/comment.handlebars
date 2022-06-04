@@ -1,23 +1,22 @@
 <section id="commentPage">
-  {{!-- <a href="/comment">
-  
-  </a> --}}
-        <div>
-          <h2 class="sectionHead">Comment</h2>
-        </div>
-        {{!-- {{> comment-details}} --}}
-        <form class="flex form">
-          <div class="formInput flex">
-            <label for="comment" class="form-label">Add A Comment</label>
-            <textarea
-              name="commentArea"
-              id="commentArea"
-              cols="80"
-              rows="10"
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </section>
+  <a href="/comment">
+    <div>
+      <h2 class="sectionHead">Comment</h2>
+    </div>
+          {{!-- {{> comment-details}} --}}
+          <form class="flex form">
+            <div class="formInput flex">
+              <label for="comment" class="form-label">Add A Comment</label>
+              <textarea
+                name="commentArea"
+                id="commentArea"
+                cols="80"
+                rows="10"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </a>       
+</section>
 {{!-- write comment.js --}}
 <script src="/js/comment.js"></script>

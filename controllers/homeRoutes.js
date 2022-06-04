@@ -22,11 +22,23 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/api/login');
     return;
   }
 
   res.render('login');
 });
+
+router.get('/logout', (req, res) => {
+  if(!req.session.logged_in) {
+    res.redirect('/api/logout');
+    res.render('homepage');
+    return;
+  }
+})
+
+router.get('/signup', (req, res) => {
+   res.render('signup');
+})
 
 module.exports = router;
