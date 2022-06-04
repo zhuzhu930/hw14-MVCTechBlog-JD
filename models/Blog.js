@@ -24,11 +24,11 @@ Blog.init(
     },
     author: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     created_date: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
       validate: {
         isDate: true,
       }
