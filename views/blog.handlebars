@@ -1,0 +1,26 @@
+<section id="blogPostPage">
+  <a href="/blogPost">
+    <div>
+      <h2 class="sectionHead">Blog</h2>
+    </div>
+          {{!-- {{> blog-details}} --}}
+          <form class="flex form blog-form">
+            <div class="formInput flex">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" id="blogTitle">
+              <label for="content" class="form-label">Content</label>
+              <textarea
+                name="blogContent"
+                id="blogContent"
+                cols="80"
+                rows="10"
+              ></textarea>
+              <label for="author" class="form-label">Author</label>
+              <input type="text" id="blogAuthor">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </a>       
+</section>
+{{!-- write blog.js --}}
+<script src="/js/blog.js"></script>
