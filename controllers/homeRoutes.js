@@ -2,6 +2,15 @@ const router = require('express').Router();
 const { User } = require('../models');
 const { Blog } = require('../models');
 const withAuth = require('../utils/auth');
+//Testing blogs data
+// const blogs = [
+//   {
+//     title: "title",
+//     content: "content",
+//     author: "author",
+//     created_date: "1/17/2022"
+//   }
+// ]
 
 router.get('/', withAuth, async (req, res) => {
   try {
