@@ -26,15 +26,6 @@ User.init(
         isAlphanumeric: true,
       },
     },
-    //In my login, I didn't define email.
-    // email: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   unique: true,
-    //   validate: {
-    //     isEmail: true,
-    //   },
-    // },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
