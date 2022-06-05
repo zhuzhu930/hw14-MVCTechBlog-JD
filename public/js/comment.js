@@ -4,17 +4,18 @@ const commentFormHandler = async (event) => {
     const comment = document.querySelector('#commentContent').value.trim();
   
     if (comment) {
-      const response = await fetch('/api/user/comment', {
+      const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({ comment }),
-        // headers: { 'Content-Type': 'application/json' },
+
+        headers: { 'Content-Type': 'application/json' },
       });
   
-    //   if (response.ok) {
-    //     document.location.replace('/');
-    //   } else {
-    //     alert('Failed to log in');
-    //   }
+      if (response.ok) {
+        document.location.replace('/comment');
+      } else {
+        alert('Failed to log in');
+      }
     }
   };
   

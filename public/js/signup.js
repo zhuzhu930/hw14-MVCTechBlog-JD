@@ -8,12 +8,12 @@ const signupFormHandler = async (event) => {
       const response = await fetch('/api/user/signup', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
-        //not so sure about the header part.
-        // headers: { 'Content-Type': 'application/json' },
+
+        headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to log in');
       }

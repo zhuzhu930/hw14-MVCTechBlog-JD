@@ -45,3 +45,4 @@ Homework session:
 - question: edit-blog.handlebars should be checked.
 - In the blog model, maybe add a column of comment directly to the blog, or link the comment model to the blog.
 - Trey's model is set up as Post, not Blog
+- comment route and blog route works, use api/comment and api/blog
