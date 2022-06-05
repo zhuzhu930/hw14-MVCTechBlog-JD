@@ -16,16 +16,17 @@
     <header>
       <nav>
         <ul>
-          <li class="menu"><a href="/">Home</a></li>
-          <li class="menu"><a href="./dashboard">Dashboard</a></li>
-          <li class="menu"><a href="./login">Login</a></li>
-          <li class="menu"><a href="./signup">Signup</a></li>
+          <li class="menu"><a href="/" id="homepage">Home</a></li>
+          <li class="menu"><a href="./dashboard" id="dashboard">Dashboard</a></li>
+          <li class="menu"><a href="./login" id="login">Login</a></li>
+          <li class="menu"><a href="./signup" id="signup">Signup</a></li>
           <li class="menu"><a href="/" id="logout">Logout</a></li>
         </ul>
       </nav>
       <h1>The Tech Blog</h1>
     </header>
     <main>
+      {{!-- 3 curly braces will render the html --}}
       {{{ body }}}
       {{!-- blog post page --}}
 

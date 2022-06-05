@@ -16,25 +16,31 @@
     <header>
       <nav>
         <ul>
-          <li class="menu"><a href="#">Home</a></li>
-          <li class="menu"><a href="#">Dashboard</a></li>
-          <li class="menu"><a href="#">Login</a></li>
-          <li class="menu"><a href="#">Logout</a></li>
+          <li class="menu"><a href="/">Home</a></li>
+          <li class="menu"><a href="/dashboard">Dashboard</a></li>
+          <li class="menu"><a href="/login">Login</a></li>
+          <!-- logout could be a button -->
+          <li class="menu"><a href="/">Logout</a></li>
         </ul>
       </nav>
       <h1>The Tech Blog</h1>
     </header>
     <main>
+      <!-- Trey used cards from Bootstrap blogPost-->
       <section id="blogPost">
         <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
           <h2>Blog Title</h2>
           <p>Posted by: name and date</p>
         </div>
         <div class="blogTextArea" id="blogTextArea">
-          <p>Blog Post Text Area</p>
+          <!-- this is new -->
+          <p><a href="/blogPage">Blog Post Text Area</a></p>
+          <div>
+            <a href="/edit-blog">Edit the blog</a>
+          </div>
         </div>
       </section>
-
+      <!-- loginPage -->
       <section id="loginPage">
         <h2 class="sectionHead">Login</h2>
         <form class="flex form">
@@ -50,7 +56,7 @@
           <p><a href="#">Sign up instead</a></p>
         </form>
       </section>
-
+      <!-- signupPage -->
       <section id="signupPage">
         <h2 class="sectionHead">Sign Up</h2>
         <form class="flex form">
@@ -66,7 +72,7 @@
           <p><a href="#">Login instead</a></p>
         </form>
       </section>
-
+      <!-- dashboardPage -->
       <section id="dashboardPage">
         <h2 class="sectionHead">Dashboard</h2>
         <div class="flex">
@@ -83,7 +89,7 @@
           <p>Blog Post Text Area</p>
         </div>
       </section> -->
-
+      <!-- commentPage -->
       <section id="commentPage">
         <div class="commentArea">
           <h2 class="sectionHead">Comment</h2>
