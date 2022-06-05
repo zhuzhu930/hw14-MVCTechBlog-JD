@@ -33,7 +33,6 @@ router.get('/login', (req, res) => {
     res.render('login');
     return;
   }
-
   res.render('login');
 });
 
@@ -47,6 +46,14 @@ router.get('/logout', (req, res) => {
 
 router.get('/signup', (req, res) => {
    res.render('signup');
+})
+
+router.get('/create-blog', (req, res) => {
+   res.render('create-blog');
+});
+
+router.get('/edit-blog', (req, res) => {
+  res.render('edit-blog');
 })
 
 module.exports = router;

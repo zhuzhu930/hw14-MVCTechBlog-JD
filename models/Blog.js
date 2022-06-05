@@ -33,6 +33,15 @@ Blog.init(
         isDate: true,
       }
     },
+    // comments is an added part
+    // comments: {
+  
+    //   {
+    //     content: 'this is a comment',
+    //     author: 'author',
+    //     date: 'date'
+    //   },
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

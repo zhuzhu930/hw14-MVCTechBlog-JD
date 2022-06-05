@@ -39,3 +39,6 @@ Plan:
 5. write routes, to send correct page to certain stage.
 
 6. debug.
+
+question: edit-blog.handlebars should be checked.
+In the blog model, maybe add a column of comment directly to the blog, or link the comment model to the blog.
