@@ -1,4 +1,4 @@
-const { response } = require("express");
+//const { response } = require("express");
 
 const blogFormHandler = async (event) => {
     event.preventDefault();
@@ -9,15 +9,15 @@ const blogFormHandler = async (event) => {
     const created_date = document.querySelector('#createdDate').value.trim();
   
     if (title && content && author && created_date) {
-      const response = await fetch('/api/user/blogPost', {
+      const response = await fetch('/api/user/blog', {
         method: 'POST',
         body: JSON.stringify({ 
-            "title": response.title, 
-            "content": response.content, 
-            "author":response.author,
-            "created_date": response.created_date
+            title,
+            content, 
+            author,
+            created_date,
         }),
-        // headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
       });
     }
   };

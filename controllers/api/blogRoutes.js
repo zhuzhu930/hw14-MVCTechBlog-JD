@@ -3,13 +3,13 @@ const { User } = require('../../models');
 const { Blog } = require('../../models/Blog')
 
 // Get all Blogs
-router.get('/blog', async (req, res) => {
+router.get('/', async (req, res) => {
   //add all res data.
   res.render('homepage');
 });
 
 // Get a blog
-router.get('/blog/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   //add blog id info
   const blogData = await Blog.findByPk(req.params.id, {
     include: [
@@ -27,7 +27,7 @@ router.get('/blog/:id', async (req, res) => {
     ]
   });
   //? add the blog content
-  // const 
+  
   return res.render('blog-details', Blog[req.params.id]);
 });
 
