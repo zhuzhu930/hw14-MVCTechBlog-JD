@@ -3,23 +3,23 @@
         {{#if blogs}}
           {{#each blogs as |blog| }}
             <section id="blogPost">
-              <a href="/blog">
+              {{!-- <a href="/blog"> --}}
                 <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
                       <h2>{{blog.title}}</h2>
-                      <p>Posted by: {{blog.author}} and {{blog.created_date}}</p>
+                      <p>Posted by: {{blog.user.username}} on {{blog.createdAt}}</p>
                     </div>
                     <div class="blogTextArea" id="blogTextArea">
                       <p>{{blog.content}}</p>
                     </div>
-                    <button><a href="./partials/blog-details">{{> blog-details}}</a></button>
-                    <button><a href="./edit-blog">Edit the blog</a></button>
-                    <button>Delete</button>
-              </a>        
+                    <a class="dashFeatureBtn" href="./blog-page.handlebars">Show this blog</a>
+                    <a class="dashFeatureBtn" href="./edit-blog.handlebars">Edit this blog</a>
+                    <button class="dashFeatureBtn" id="deleteBlogBtn">Delete the blog</button>
             </section>
           {{/each}}
         {{/if}}
+
         <div class="flex">
-          <button class="btn newPostBtn"><a href="/create-blog"></a>+ New Post</button>
+          <button class="btn newPostBtn"><a href="./create-blog"></a>+ New Post</button>
         </div>
 </section>
 {{!-- write dashboard.js --}}
