@@ -1,15 +1,14 @@
-{{!-- !-- Loop over each blog object --}}
+{{!-- Loop over each blog object --}}
 {{#each blogs as |blog| }}
-<section id="blogPost">
-  <a href="/blogs/{{id}}">
-    <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
-          <h2>{{blog.title}}</h2>
-          <p>Posted by: {{blog.user.username}} and {{blog.createdAt}}</p>
-        </div>
-        <div class="blogTextArea" id="blogTextArea">
-          <p>{{blog.content}}</p>
-        </div>
-        {{!-- <button><a href="./partials/blog-details.handlebars">{{> blog-details}}</a></button> --}}
-  </a>        
-</section>
+  <section id="blogPost">
+    <a href="/blogs/{{id}}">
+      <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
+            <h2>{{blog.title}}</h2>
+            <p>Posted by: {{blog.user.username}} and {{blog.createdAt}}</p>
+          </div>
+          <div class="blogTextArea" id="blogTextArea">
+            <p>{{blog.content}}</p>
+          </div>
+    </a>        
+  </section>
 {{/each}}

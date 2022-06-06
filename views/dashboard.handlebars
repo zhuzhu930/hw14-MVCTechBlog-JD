@@ -3,7 +3,6 @@
         {{#if blogs}}
           {{#each blogs as |blog| }}
             <section id="blogPost">
-              {{!-- <a href="/blog"> --}}
                 <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
                       <h2>{{blog.title}}</h2>
                       <p>Posted by: {{blog.user.username}} on {{blog.createdAt}}</p>
@@ -11,15 +10,16 @@
                     <div class="blogTextArea" id="blogTextArea">
                       <p>{{blog.content}}</p>
                     </div>
-                    <a class="dashFeatureBtn" href="./blog-page.handlebars">Show this blog</a>
-                    <a class="dashFeatureBtn" href="./edit-blog.handlebars">Edit this blog</a>
+                    // Need to style these 3 buttons to be a consistent look
+                    <a class="dashFeatureBtn" href="/blog-page">Show this blog</a>
+                    <a class="dashFeatureBtn" href="/edit-blog">Edit this blog</a>
                     <button class="dashFeatureBtn" id="deleteBlogBtn">Delete the blog</button>
             </section>
           {{/each}}
         {{/if}}
 
         <div class="flex">
-          <button class="btn newPostBtn"><a href="./create-blog"></a>+ New Post</button>
+          <button class="btn newPostBtn"><a href="/create-blog"></a>+ New Post</button>
         </div>
 </section>
 {{!-- write dashboard.js --}}
