@@ -1,0 +1,39 @@
+<section id="blog-page">
+    <div class="sectionHead singleBlog">
+        <h2>{{blog.title}}</h2>
+        <p>Posted by: {{blog.user.username}} and {{blog.createdAt}}</p>
+    </div>
+    <div>
+        <p>{{blog.content}}</p>        
+    </div>                   
+</section>
+<hr class="solid">
+
+{{!-- comment section --}}
+<section id="commentPage">
+    <div>
+      <h2 class="sectionHead">Comment</h2>
+    </div>
+          
+    <form class="flex form comment-form">
+            <div class="formInput flex">
+              <label for="comment" class="form-label">Add A Comment</label>
+              <textarea
+                name="commentContent"
+                id="commentContent"
+                cols="80"
+                rows="10"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-id="{{id}}">Submit</button>
+    </form>
+</section>
+
+{{#each comments as |comment|}}
+<div class="singleComment" id="singleComment">
+    <p>{{comment.content}}</p>
+    <div>
+        Posted by {{comment.user.username}} on {{comment.createdAt}}
+    </div>
+</div>
+{{/each}}
