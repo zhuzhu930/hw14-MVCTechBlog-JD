@@ -85,30 +85,7 @@ router.get('/edit-blog', (req, res) => {
   });
 })
 
-router.get('/blog/:id', async (req, res) => {
-  const blogData = await Blog.findByPk(req.params.id, {
-    include: [
-      {
-        model: User,
-        attributes: ['username'],
-      },
-      {
-        model: Comment,
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
-      },
-    ],
-  });
 
-  const blog = blogData.get({ plain: true });
-
-  res.render('blog-page', {
-    ...blog,
-    logged_in: true,
-  });
-});
 
 //Need to figure out this page: 
 router.get('/logout', (req, res) => {

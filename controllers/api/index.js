@@ -5,8 +5,8 @@ const commentRoutes = require('./commentRoutes');
 
 //not so sure the userRoutes is set up correctly
 //has api/users/login and api/users/logout
-router.use('/user', userRoutes);
-router.use('/blog', blogRoutes);
-router.use('/comment', commentRoutes);
+router.use('/users', userRoutes);
+router.use('/blogs', blogRoutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;
