@@ -1,9 +1,8 @@
-<section id="blogPostPage">
-  <a href="/blogPost">
+<section id="createBlog">
     <div>
-      <h2 class="sectionHead">New Blog Post</h2>
+      <h2 class="sectionHead">New Blog</h2>
     </div>
-          {{!-- {{> blog-details}} --}}
+          {{!-- create a blog form --}}
           <form class="flex form blog-form">
             <div class="formInput flex">
               <label for="title" class="form-label">Title</label>
@@ -15,14 +14,9 @@
                 cols="80"
                 rows="10"
               ></textarea>
-              <label for="author" class="form-label">Author</label>
-              <input type="text" id="blogAuthor">
-              <label for="date" class="form-label">Created Date</label>
-              <input type="date" id="createdDate" placeholder="YYYY-MM-DD">
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary" id="createBlogSave">Save</button>
           </form>
-    </a>       
 </section>
 {{!-- write blog.js --}}
 <script src="/js/blog.js"></script>

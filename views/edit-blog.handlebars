@@ -1,17 +1,20 @@
-{{!-- singleBlogPage Need to link the blog.id--}}
-{{!-- {{#each blogs as |blog|}} --}}
-<section id="singleBlog">
-        <a href="/blog/{{id}}">
-                <div class="sectionHead singleBlog" id="singleBlog">
-                <h2>{{blog.title}}</h2>
-                <p>Posted by: {{blog.author}} and {{blog.created_date}}</p>
-                </div>
-                <div>
-                <p>{{blog.content}}</p>
-                </div>
-        </a>        
+<section id="editBlog">
+    <div>
+      <h2 class="sectionHead">Edit A Blog</h2>
+    </div>
+          {{!-- edit a blog form --}}
+          <form class="flex form blog-form">
+            <div class="formInput flex">
+              <label for="title" class="form-label">{{title}}</label>
+              <input type="text" id="blogTitle">
+              <label for="content" class="form-label">Content</label>
+              <textarea
+                name="blogContent"
+                id="blogContent"
+                cols="80"
+                rows="10"
+              >{{content}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="editBlogSave" data-id="{{id}}">Save</button>
+          </form>
 </section>
-<hr class="solid">
-{{!-- need to link blog_id to blog.id --}}
-{{> comment-details}}
-{{!-- {{/each}} --}}
