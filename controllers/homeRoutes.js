@@ -58,9 +58,9 @@ router.get('/login', (req, res) => {
     // if a user is looged in, redirect to dashboard
     res.render('dashboard');
     return;
-  }
-  // Otherwise, render login page
-  res.render('login');
+  } else {
+    res.render('login')
+  };
 });
 
 //Create blog page--should link to frontend

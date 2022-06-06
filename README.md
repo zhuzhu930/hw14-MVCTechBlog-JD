@@ -46,3 +46,20 @@ Homework session:
 - In the blog model, maybe add a column of comment directly to the blog, or link the comment model to the blog.
 - Trey's model is set up as Post, not Blog
 - comment route and blog route works, use api/comment and api/blog
+
+Routes: 
+Working:
+Homepage is showing correctly
+Dashboard is showing correctly
+Logout route is showing correctly
+http://localhost:3001/api/blogs working
+http://localhost:3001/create-blog
+http://localhost:3001/edit-blog
+
+
+
+Not working
+Blog-page not working
+Login route is not showing correctly http://localhost:3001/login
+http://localhost:3001/api/comments not working
+http://localhost:3001/api/users not working

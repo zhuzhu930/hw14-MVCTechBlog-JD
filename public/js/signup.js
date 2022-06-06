@@ -13,6 +13,7 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        //check the redirect part
         document.location.replace('/dashboard');
       } else {
         alert('Failed to sign up!');

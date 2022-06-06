@@ -1,19 +1,21 @@
 <section id="dashboardPage">
         <h2 class="sectionHead">Dashboard</h2>
         {{#if blogs}}
-          {{#each blogs as |blog| }}
+          {{#each Blogs as |Blog| }}
             <section id="blogPost">
                 <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
-                      <h2>{{blog.title}}</h2>
-                      <p>Posted by: {{blog.user.username}} on {{blog.createdAt}}</p>
+                      <h2>{{Blog.title}}</h2>
+                      <p>Posted by: {{Blog.user.username}} on {{Blog.createdAt}}</p>
                     </div>
                     <div class="blogTextArea" id="blogTextArea">
-                      <p>{{blog.content}}</p>
+                      <p>{{Blog.content}}</p>
                     </div>
-                    // Need to style these 3 buttons to be a consistent look
-                    <a class="dashFeatureBtn" href="/blog-page">Show this blog</a>
-                    <a class="dashFeatureBtn" href="/edit-blog">Edit this blog</a>
-                    <button class="dashFeatureBtn" id="deleteBlogBtn">Delete the blog</button>
+                    {{!-- Need to style these 3 buttons to be a consistent look --}}
+                    {{!-- <div class="dashFeatureBtns"> NOT WORKING--}}
+                      <a class="featureBtn" href="/blog-page">Show this blog</a>
+                      <a class="featureBtn" href="/edit-blog">Edit this blog</a>
+                      <button class="featureBtn" id="deleteBlogBtn">Delete the blog</button>
+                    {{!-- </div> --}}        
             </section>
           {{/each}}
         {{/if}}

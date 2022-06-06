@@ -21,17 +21,17 @@ Blog.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    author: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    created_date: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isDate: true,
-      }
-    },
+    // author: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // created_date: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     isDate: true,
+    //   }
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

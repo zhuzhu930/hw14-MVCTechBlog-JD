@@ -1,11 +1,11 @@
 {{!-- Loop over each blog object --}}
 {{#each blogs as |blog| }}
   <section id="blogPost">
-    <a href="/blogs/{{id}}">
-      <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
+    <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
             <h2>{{blog.title}}</h2>
-            <p>Posted by: {{blog.user.username}} and {{blog.createdAt}}</p>
+            <p>Posted by: {{blog.user.username}} on {{createdAt}}</p>
           </div>
+          <a href="/blogs/{{id}}">
           <div class="blogTextArea" id="blogTextArea">
             <p>{{blog.content}}</p>
           </div>
