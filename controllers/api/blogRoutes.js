@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
   });
 });
 
+//post a blog, api/blogs/
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
