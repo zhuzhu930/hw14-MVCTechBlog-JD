@@ -1,3 +1,4 @@
+//done
 //require all Models
 const User = require('./User');
 const Blog = require('./Blog');
@@ -41,4 +42,8 @@ Comment.belongsTo(Blog, {
 });
 
 //export models: 
-module.exports = { User, Blog, Comment };
+module.exports = { 
+    User, 
+    Blog, 
+    Comment 
+};

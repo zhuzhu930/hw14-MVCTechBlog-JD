@@ -91,7 +91,7 @@ router.get('/edit-blog', (req, res) => {
 router.get('/logout', (req, res) => {
   if(!req.session.logged_in) {
     // res.redirect('/api/logout');
-    res.render('homepage');
+    res.render('login');
     return;
   }
 })
