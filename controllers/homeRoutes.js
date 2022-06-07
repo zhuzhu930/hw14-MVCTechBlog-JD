@@ -12,6 +12,10 @@ router.get('/', async (req, res) => {
           model: User, 
           attributes: ['username'],
         },
+        {
+          model: Blog,
+          attributes: ['createdAt'],
+        }
       ],
     });
     // Serialize the data
@@ -56,7 +60,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     // if a user is looged in, redirect to dashboard
-    res.render('dashboard');
+    res.redirect('/dashboard');
     return;
   } else {
     res.render('login')
@@ -83,24 +87,15 @@ router.get('/edit-blog', (req, res) => {
     ...blog,
     logged_in: true,
   });
-})
-
-
+});
 
 //Need to figure out this page: 
 router.get('/logout', (req, res) => {
   if(!req.session.logged_in) {
-    // res.redirect('/api/logout');
+    // res.redirect('/api/users/logout');
     res.render('login');
     return;
   }
-})
-
-router.get('/signup', (req, res) => {
-   res.render('signup', {
-     //? Add sign up information here.
-   });
-})
-
+});
 
 module.exports = router;

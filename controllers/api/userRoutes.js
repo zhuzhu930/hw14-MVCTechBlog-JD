@@ -5,6 +5,7 @@ const { User } = require('../../models');
 //api/users/
 router.post('/', async (req, res) => {
   try {
+    // res.render('signup');
     const userData = await User.create(req.body);
 
     req.session.save(() => {
