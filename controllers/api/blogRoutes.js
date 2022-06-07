@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-// Get a blog: api/blogs/:id
+// Get a blog: api/blogs/:id not working
 router.get('/:id', async (req, res) => {
   const blogData = await Blog.findByPk(req.params.id, {
     include: [
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
   });
 });
 
-//post a blog, api/blogs/
+//? post a blog, api/blogs/ not working
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
@@ -49,7 +49,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+//this route should be correct.
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({

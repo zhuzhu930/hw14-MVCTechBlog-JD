@@ -12,10 +12,10 @@ router.get('/', async (req, res) => {
           model: User, 
           attributes: ['username'],
         },
-        {
-          model: Blog,
-          attributes: ['createdAt'],
-        }
+        // {
+        //   model: Blog,
+        //   attributes: ['createdAt'],
+        // }
       ],
     });
     // Serialize the data
