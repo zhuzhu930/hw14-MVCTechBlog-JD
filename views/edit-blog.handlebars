@@ -3,9 +3,9 @@
       <h2 class="sectionHead">Edit A Blog</h2>
     </div>
           {{!-- edit a blog form --}}
-          <form class="flex form blog-form">
+          <form class="flex form edit-blog-form">
             <div class="formInput flex">
-              <label for="title" class="form-label">{{title}}</label>
+              <label for="title" class="form-label">{{blog.title}}</label>
               <input type="text" id="blogTitle">
               <label for="content" class="form-label">Content</label>
               <textarea
@@ -13,8 +13,8 @@
                 id="blogContent"
                 cols="80"
                 rows="10"
-              >{{content}}</textarea>
+              >{{blog.content}}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary" id="editBlogSave" data-id="{{id}}">Save</button>
+            <button type="submit" class="btn btn-primary" id="editBlogSave" data-id=`{{blog.id}}`>Save</button>
           </form>
 </section>

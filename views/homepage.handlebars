@@ -3,9 +3,9 @@
   <section id="blogPost">
     <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
             <h2>{{blog.title}}</h2>
-            <p>Posted by: {{blog.user.username}} on {{createdAt}}</p>
+            <p>Posted by: {{blog.user.username}} on {{blog.createdAt}}</p>
           </div>
-          <a href="/blogs/{{id}}">
+          <a href=`/blogs/{{blog.id}}`>
           <div class="blogTextArea" id="blogTextArea">
             <p>{{blog.content}}</p>
           </div>

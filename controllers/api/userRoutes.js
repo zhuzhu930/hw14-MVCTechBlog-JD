@@ -19,6 +19,10 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/login', (req, res) => {
+  res.render('login');
+})
+
 //api/users/login
 router.post('/login', async (req, res) => {
   try {
@@ -58,7 +62,7 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-
+    // window.alert(`You're logged out!`);
     res.render('homepage');
   } else {
     res.status(404).end();

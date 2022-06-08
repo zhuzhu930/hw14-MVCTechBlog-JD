@@ -15,6 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/dashboard');
+      window.alert(`You're now logged in!`);
     } else {
       alert('Failed to log in');
     }
@@ -28,7 +29,7 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password_signup').value.trim();
 
   if (username && password) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
 
@@ -38,6 +39,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       //check the redirect part
       document.location.replace('/dashboard');
+      window.alert(`You're now signed up!`);
     } else {
       alert('Failed to sign up!');
     }
@@ -53,3 +55,8 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+  //This block of code is not working.
+// document.querySelector('#logout').addEventListener('click', ()=> {
+//   window.alert(`You're now logged out! Thank you for using this Tech Blog!`);
+// });

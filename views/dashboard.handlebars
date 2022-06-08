@@ -1,27 +1,27 @@
 <section id="dashboardPage">
         <h2 class="sectionHead">Dashboard</h2>
         {{#if blogs}}
-          {{#each Blogs as |Blog| }}
+          {{#each blogs as |blog| }}
             <section id="blogPost">
                 <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
-                      <h2>{{Blog.title}}</h2>
-                      <p>Posted by: {{Blog.user.username}} on {{Blog.createdAt}}</p>
+                      <h2>{{blog.title}}</h2>
+                      <p>Posted by: {{blog.user.username}} on {{blog.createdAt}}</p>
                     </div>
                     <div class="blogTextArea" id="blogTextArea">
-                      <p>{{Blog.content}}</p>
+                      <p>{{blog.content}}</p>
                     </div>
                     {{!-- Need to style these 3 buttons to be a consistent look --}}
-                    {{!-- <div class="dashFeatureBtns"> NOT WORKING--}}
-                      <a class="featureBtn" href="/blog-page">Show this blog</a>
-                      <a class="featureBtn" href="/edit-blog">Edit this blog</a>
+                    <div class="dashFeatureBtns">
+                      <a class="featureBtn" href="/api/blogs/blog-page">Show this blog</a>
+                      <a class="featureBtn" href="/api/blogs/edit-blog">Edit this blog</a>
                       <button class="featureBtn" id="deleteBlogBtn">Delete the blog</button>
-                    {{!-- </div> --}}        
+                    </div>        
             </section>
           {{/each}}
         {{/if}}
 
         <div class="flex">
-          <button class="btn newPostBtn"><a href="/create-blog"></a>+ New Post</button>
+          <button class="btn newPostBtn"><a class="createBlogBtn" href="/api/blogs/create-blog">+ New Post</a></button>
         </div>
 </section>
 {{!-- write dashboard.js --}}

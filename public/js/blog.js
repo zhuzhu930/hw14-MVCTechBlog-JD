@@ -1,13 +1,13 @@
 //const { response } = require("express");
-
-const blogFormHandler = async (event) => {
+//Create a blog
+const createBlogHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#blogTitle').value.trim();
     const content = document.querySelector('#blogContent').value.trim();
   
     if (title && content) {
-      const response = await fetch('/api/blogs', {
+      const response = await fetch('/api/blogs/create-blog', {
         method: 'POST',
         body: JSON.stringify({ 
             title,
@@ -24,7 +24,37 @@ const blogFormHandler = async (event) => {
       }
     }
   };
+
+  //Edit a blog: 
+  const editBlogHandler = async (event) => {
+    event.preventDefault();
+  
+    const title = document.querySelector('#blogTitle').value.trim();
+    const content = document.querySelector('#blogContent').value.trim();
+  
+    if (title && content) {
+      const response = await fetch('/api/blogs/edit-blog', {
+        method: 'POST',
+        body: JSON.stringify({ 
+            title,
+            content, 
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (response.ok) {
+        //?double check the redirect
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to edit a blog');
+      }
+    }
+  };
   
   document
-    .querySelector('.blog-form')
-    .addEventListener('submit', blogFormHandler);
+    .querySelector('.create-blog-form')
+    .addEventListener('submit', createBlogHandler);
+
+  document
+    .querySelector('.edit-blog-form')
+    .addEventListener('submit', editBlogHandler);

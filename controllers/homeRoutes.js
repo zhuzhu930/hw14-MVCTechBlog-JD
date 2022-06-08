@@ -57,6 +57,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+//?why is a login in the homeroutes and a login in the userroutes?
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     // if a user is looged in, redirect to dashboard
@@ -65,28 +66,6 @@ router.get('/login', (req, res) => {
   } else {
     res.render('login')
   };
-});
-
-//Create blog page--should link to frontend
-router.get('/create-blog', (req, res) => {
-  res.render('create-blog', {
-    logged_in: true,
-  });
-});
-
-router.get('/edit-blog', (req, res) => {
-  const blog = {
-    id: req.params.id,
-    title: req.body.title,
-    content: req.body.content,
-    author: req.body.author,
-    created_date: req.body.created_date,
-  }
-
-  res.render('edit-blog', {
-    ...blog,
-    logged_in: true,
-  });
 });
 
 //Need to figure out this page: 
