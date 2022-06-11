@@ -55,8 +55,3 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
-
-  //This block of code is not working.
-// document.querySelector('#logout').addEventListener('click', ()=> {
-//   window.alert(`You're now logged out! Thank you for using this Tech Blog!`);
-// });

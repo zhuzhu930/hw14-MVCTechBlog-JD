@@ -1,4 +1,4 @@
-//const { response } = require("express");
+// const { response } = require("express");
 //Create a blog
 const createBlogHandler = async (event) => {
     event.preventDefault();

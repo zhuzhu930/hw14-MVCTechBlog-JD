@@ -4,11 +4,11 @@
           {{#each blogs as |blog| }}
             <section id="blogPost">
                 <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
-                      <h2>{{blog.title}}</h2>
-                      <p>Posted by: {{blog.user.username}} on {{blog.createdAt}}</p>
+                      <h2>{{title}}</h2>
+                      <p>Posted by: {{blog.user.username}} on {{createdAt}}</p>
                     </div>
                     <div class="blogTextArea" id="blogTextArea">
-                      <p>{{blog.content}}</p>
+                      <p>{{content}}</p>
                     </div>
                     {{!-- Need to style these 3 buttons to be a consistent look --}}
                     <div class="dashFeatureBtns">
