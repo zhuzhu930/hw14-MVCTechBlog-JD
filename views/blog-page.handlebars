@@ -29,15 +29,17 @@
     </form>
 </section>
 
-{{#each comments as |comment|}}
+
 <section id="commentPage">
   <div class="sectionHead">
     <h2>Comments</h2>
   </div>
+{{#each comments as |comment|}}
   <div class="singleComment" id="singleComment">
-      <p>{{comment.content}}</p>
-      <p>Posted by {{comment.user.username}} on {{comment.createdAt}}</p>
+      <p>{{comment.comment}}</p>
+      <p>Posted by: {{comment.user.username}} on {{comment.createdAt}}</p>
   </div>
-</section>
 {{/each}}
+</section>
+
 
