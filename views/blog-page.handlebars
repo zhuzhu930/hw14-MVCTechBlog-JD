@@ -30,7 +30,7 @@
 </section>
 
 {{#each comments as |comment|}}
-<div id="commentPage">
+<section id="commentPage">
   <div class="sectionHead">
     <h2>Comments</h2>
   </div>
@@ -38,6 +38,6 @@
       <p>{{comment.content}}</p>
       <p>Posted by {{comment.user.username}} on {{comment.createdAt}}</p>
   </div>
-</div>
+</section>
 {{/each}}
 
