@@ -30,11 +30,14 @@
 </section>
 
 {{#each comments as |comment|}}
-<div class="singleComment" id="singleComment" data-id="{{id}}">
-    <p>{{comment.content}}</p>
-    <div>
-        Posted by {{comment.user.username}} on {{comment.createdAt}}
-    </div>
+<div id="commentPage">
+  <div class="sectionHead">
+    <h2>Comments</h2>
+  </div>
+  <div class="singleComment" id="singleComment">
+      <p>{{comment.content}}</p>
+      <p>Posted by {{comment.user.username}} on {{comment.createdAt}}</p>
+  </div>
 </div>
 {{/each}}
 
