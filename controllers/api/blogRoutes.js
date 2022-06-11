@@ -10,28 +10,32 @@ router.get('/', (req, res) => {
 
 // Get a blog: api/blogs/:id not working
 router.get('/:id', async (req, res) => {
-  const blogData = await Blog.findByPk(req.params.id, {
-    include: [
-      {
-        model: User,
-        attributes: ['username'],
-      },
-      {
-        model: Comment,
-        include: {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
           model: User,
           attributes: ['username'],
         },
-      },
-    ],
-  });
-
-  const blog = blogData.get({ plain: true });
-
-  res.render('blog-page', {
-    ...blog,
-    logged_in: true,
-  });
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
+    });
+  
+    const blog = blogData.get({ plain: true });
+  
+    res.render('blog-page', {
+      ...blog,
+      logged_in: req.session.logged_in
+    });
+  } catch(err) {
+    res.status(500).json(err);
+  }  
 });
 
 //Create a blog, use api/blogs/create-blog: 
