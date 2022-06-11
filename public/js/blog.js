@@ -58,3 +58,5 @@ const createBlogHandler = async (event) => {
   document
     .querySelector('.edit-blog-form')
     .addEventListener('submit', editBlogHandler);
+
+  document.querySelector('.createBlogBtn').addEventListener('submit', createBlogHandler);

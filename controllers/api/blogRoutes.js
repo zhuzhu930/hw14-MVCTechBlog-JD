@@ -26,28 +26,28 @@ router.get('/', (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [{model: User}, {model: Comment }]
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['username'],
-      //   },
-      //   {
-      //     model: Comment,
-      //     include: {
-      //       model: User,
-      //       attributes: ['username'],
-      //     },
-      //   },
-      // ],
+      // include: [{model: User}, {model: Comment }]
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ['username'],
+          },
+        },
+      ],
     });
   
     const blog = blogData.get({ plain: true });
-    console.log("Logging this blog", blog);
+    // console.log("Logging this blog", blog);
   
     res.render('blog-page', {
       ...blog,
-      logged_in: req.session.logged_in
+      logged_in: true,
     });
   } catch(err) {
     console.log(err)
@@ -55,20 +55,22 @@ router.get('/:id', async (req, res) => {
   }  
 });
 
-//Create a blog, use api/blogs/create-blog: 
+//Create a blog, use api/blogs/create-blog: NOT working
 router.get('/create-blog', (req, res) => {
-  try {
-    res.render('create-blog', {
-      logged_in: true,
-    });
-  } catch (err) {
-    console.log(err)
-    res.status(400).json(err);
-  }
+  // try {
+  //   res.render('create-blog', {
+  //     logged_in: true,
+  //   });
+  // } catch (err) {
+  //   console.log(err)
+  //   res.status(400).json(err);
+  // }
+  res.render('create-blog', {
+    logged_in: true,
+  });
 });
 
 router.post('/create-blog', withAuth, async (req, res) => {
-  // res.render('create-blog');
   try {
     const newBlog = await Blog.create({
       ...req.body,
