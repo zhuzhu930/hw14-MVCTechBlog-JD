@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog } = require('../../models');
+const { User, Blog, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all Blogs api/blogs/
@@ -9,18 +9,18 @@ router.get('/', (req, res) => {
 });
 
 // this post route is added
-router.post('/', withAuth, async (req, res) => {
-  try {
-    const newBlog = await Blog.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+// router.post('/', withAuth, async (req, res) => {
+//   try {
+//     const newBlog = await Blog.create({
+//       ...req.body,
+//       user_id: req.session.user_id,
+//     });
 
-    res.status(200).json(newBlog);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-})
+//     res.status(200).json(newBlog);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// })
 
 // Get a blog: api/blogs/:id not working
 router.get('/:id', async (req, res) => {
@@ -43,21 +43,28 @@ router.get('/:id', async (req, res) => {
     });
   
     const blog = blogData.get({ plain: true });
+    console.log("Logging this blog", blog);
   
     res.render('blog-page', {
       ...blog,
       logged_in: req.session.logged_in
     });
   } catch(err) {
+    console.log(err)
     res.status(500).json(err);
   }  
 });
 
 //Create a blog, use api/blogs/create-blog: 
 router.get('/create-blog', (req, res) => {
-  res.render('create-blog', {
-    logged_in: true,
-  });
+  try {
+    res.render('create-blog', {
+      logged_in: true,
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err);
+  }
 });
 
 router.post('/create-blog', withAuth, async (req, res) => {
