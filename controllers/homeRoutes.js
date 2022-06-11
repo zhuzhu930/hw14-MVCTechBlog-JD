@@ -50,7 +50,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dashboard', {
       //destructuring user
       ...user, 
-      logged_in: req.session.logged_in,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err)
@@ -60,7 +60,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 //?why is a login in the homeroutes and a login in the userroutes?
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    // if a user is looged in, redirect to dashboard
+    // if a user is logged in, redirect to dashboard
     res.redirect('/dashboard');
     return;
   } else {
