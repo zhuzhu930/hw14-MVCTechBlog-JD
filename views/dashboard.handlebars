@@ -12,8 +12,8 @@
                     </div>
                     {{!-- Need to style these 3 buttons to be a consistent look --}}
                     <div class="dashFeatureBtns">
-                      <a class="featureBtn" href="/api/blogs/blog-page">Show this blog</a>
-                      <a class="featureBtn" href="/api/blogs/edit-blog">Edit this blog</a>
+                      <a class="featureBtn" href="/api/blogs/{{id}}">Show this blog</a>
+                      <a class="featureBtn" href="/api/blogs/{{id}}/edit-blog">Edit this blog</a>
                       <button class="featureBtn" id="deleteBlogBtn">Delete the blog</button>
                     </div>        
             </section>
@@ -25,4 +25,4 @@
         </div>
 </section>
 {{!-- write dashboard.js --}}
-<script src="/js/dashboard.js"></script>
+<script src="/js/blog.js"></script>

@@ -33,7 +33,7 @@ const createBlogHandler = async (event) => {
     const content = document.querySelector('#blogContent').value.trim();
   
     if (title && content) {
-      const response = await fetch('/api/blogs/edit-blog', {
+      const response = await fetch('/api/blogs/:id/edit-blog', {
         method: 'POST',
         body: JSON.stringify({ 
             title,

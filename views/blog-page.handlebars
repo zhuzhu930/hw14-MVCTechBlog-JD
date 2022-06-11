@@ -1,10 +1,10 @@
 <section id="blog-page">
     <div class="sectionHead singleBlog">
-        <h2>{{blog.title}}</h2>
-        <p>Posted by: {{blog.user.username}} and {{blog.createdAt}}</p>
+        <h2>{{title}}</h2>
+        <p>Posted by: {{user.username}} and {{createdAt}}</p>
     </div>
     <div>
-        <p>{{blog.content}}</p>        
+        <p>{{content}}</p>        
     </div>                   
 </section>
 <hr class="solid">
@@ -30,7 +30,7 @@
 </section>
 
 {{#each comments as |comment|}}
-<div class="singleComment" id="singleComment">
+<div class="singleComment" id="singleComment" data-id="{{id}}">
     <p>{{comment.content}}</p>
     <div>
         Posted by {{comment.user.username}} on {{comment.createdAt}}
