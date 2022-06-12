@@ -26,7 +26,7 @@ router.get('/login', (req, res) => {
 //api/users/login
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username },
+    const userData = await User.findOne({ where: { username: req.body.username }
     });
 
     if (!userData) {
@@ -56,14 +56,14 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//The logout button goes to a POST request.
+
 //api/users/logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-    // window.alert(`You're logged out!`);
-    res.render('homepage');
   } else {
     res.status(404).end();
   }
