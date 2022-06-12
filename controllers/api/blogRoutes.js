@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
     });
   
     const blog = blogData.get({ plain: true });
-    // console.log("Logging this blog", blog);
+    console.log("Logging this blog", blog);
   
     res.render('blog-page', {
       ...blog,
