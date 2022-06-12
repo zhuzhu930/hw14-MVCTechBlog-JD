@@ -16,10 +16,15 @@
     <header>
       <nav>
         <ul>
+          {{#if logged_in}}
+          <li class="menu"><a href="/" id="homepage">Home</a></li>
+          <li class="menu"><a href="/dashboard" id="dashboard">Dashboard</a></li>
+          <li class="menu"><button id="logout">Logout</button></li>
+          {{else}}
           <li class="menu"><a href="/" id="homepage">Home</a></li>
           <li class="menu"><a href="/dashboard" id="dashboard">Dashboard</a></li>
           <li class="menu"><a href="/api/users/login" id="login">Login</a></li>
-          <li class="menu"><button id="logout">Logout</button></li>
+          {{/if}}
           {{!-- <li class="menu"><a href="/api/users/logout" id="logout">Logout</a></li> --}}
         </ul>
       </nav>
