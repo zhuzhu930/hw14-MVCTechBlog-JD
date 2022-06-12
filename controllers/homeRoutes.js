@@ -12,16 +12,10 @@ router.get('/', async (req, res) => {
           model: User, 
           attributes: ['username'],
         },
-        // {
-        //   model: Blog,
-        //   attributes: ['createdAt'],
-        // }
       ],
     });
     // Serialize the data
     const blogs = blogData.map((blog) => blog.get({ plain: true })); 
-    //Print to console for debugging
-    console.log('blogs', blogs);
 
     // render homepage
     res.render('homepage', {
@@ -44,8 +38,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
     // Serialize user data
     const user = userData.get({ plain: true });
-    // logging out user data for debugging
-    console.log('user', user);
 
     res.render('dashboard', {
       //destructuring user

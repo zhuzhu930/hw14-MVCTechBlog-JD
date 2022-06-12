@@ -8,25 +8,10 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
-// this post route is added
-// router.post('/', withAuth, async (req, res) => {
-//   try {
-//     const newBlog = await Blog.create({
-//       ...req.body,
-//       user_id: req.session.user_id,
-//     });
-
-//     res.status(200).json(newBlog);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// })
-
 // Get a blog: api/blogs/:id not working
 router.get('/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      // include: [{model: User}, {model: Comment }]
       include: [
         {
           model: User,
@@ -52,19 +37,11 @@ router.get('/:id', async (req, res) => {
   } catch(err) {
     console.log(err)
     res.status(500).json(err);
-  }  
+  }
 });
 
 //Create a blog, use api/blogs/create-blog: NOT working
 router.get('/create-blog', (req, res) => {
-  // try {
-  //   res.render('create-blog', {
-  //     logged_in: true,
-  //   });
-  // } catch (err) {
-  //   console.log(err)
-  //   res.status(400).json(err);
-  // }
   res.render('create-blog', {
     logged_in: true,
   });
@@ -101,6 +78,7 @@ router.get('/:id/edit-blog', (req, res) => {
 router.post('/:id/edit-blog', withAuth, async (req, res) => {
   try {
     const editedBlog = await Blog.create({
+      id: req.params.id,
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -112,7 +90,8 @@ router.post('/:id/edit-blog', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-//this route should be correct.
+//this route should be correct. 
+//Route: api/blogs/:id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({
