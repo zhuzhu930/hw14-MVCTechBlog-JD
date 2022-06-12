@@ -4,7 +4,6 @@ const withAuth = require('../../utils/auth');
 
 // Get all Blogs api/blogs/
 router.get('/', (req, res) => {
-  //add all res data.
   res.render('homepage');
 });
 
@@ -32,7 +31,7 @@ router.get('/:id', async (req, res) => {
   
     res.render('blog-page', {
       ...blog,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch(err) {
     console.log(err)
@@ -43,7 +42,7 @@ router.get('/:id', async (req, res) => {
 //Create a blog, use api/blogs/create-blog: NOT working
 router.get('/create-blog', (req, res) => {
   res.render('create-blog', {
-    logged_in: true,
+    logged_in: req.session.logged_in,
   });
 });
 
