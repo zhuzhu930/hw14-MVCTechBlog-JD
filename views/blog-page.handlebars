@@ -1,5 +1,5 @@
 <section id="blog-page">
-    <div class="sectionHead singleBlog">
+    <div class="sectionHead singleBlog blogTitleAndTime">
         <h2>{{title}}</h2>
         <p>Posted by: {{user.username}} on {{createdAt}}</p>
     </div>
@@ -31,8 +31,8 @@
 
 
 <section id="commentPage">
-  <div class="sectionHead">
-    <h2>Comments</h2>
+  <div>
+    <h2 class="sectionHead">Comments</h2>
   </div>
 {{#each comments as |comment|}}
   <div class="singleComment" id="singleComment">

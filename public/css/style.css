@@ -181,3 +181,8 @@ p {
   color: whitesmoke;
   text-decoration: none;
 }
+
+.singleComment {
+  padding: 5px;
+  text-align: center;
+}
