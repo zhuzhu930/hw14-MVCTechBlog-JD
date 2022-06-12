@@ -51,6 +51,17 @@ nav ul {
   text-decoration: none;
 }
 
+.menu button {
+  background-color: darkblue;
+  color: lightcyan;
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+  padding: 15px 32px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
 .menu a:hover {
   border-radius: 1rem;
   border: solid 2px lightcyan;
