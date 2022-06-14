@@ -53,10 +53,10 @@ const createBlogHandler = async (event) => {
   
   document
     .querySelector('.create-blog-form')
-    .addEventListener('submit', createBlogHandler);
+    .addEventListener('click', createBlogHandler);
 
   document
     .querySelector('.edit-blog-form')
-    .addEventListener('submit', editBlogHandler);
+    .addEventListener('click', editBlogHandler);
 
-  document.querySelector('.createBlogBtn').addEventListener('submit', createBlogHandler);
+  document.querySelector('.createBlogBtn').addEventListener('click', createBlogHandler);

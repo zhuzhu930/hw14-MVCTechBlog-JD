@@ -18,6 +18,7 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: Comment,
+          attributes: ['comment', 'user_id', 'blog_id'],
           include: {
             model: User,
             attributes: ['username'],
@@ -41,9 +42,7 @@ router.get('/:id', async (req, res) => {
 
 //Create a blog, use api/blogs/create-blog: NOT working
 router.get('/create-blog', (req, res) => {
-  res.render('create-blog', {
-    logged_in: req.session.logged_in,
-  });
+  res.render('create-blog');
 });
 
 router.post('/create-blog', withAuth, async (req, res) => {
@@ -52,14 +51,13 @@ router.post('/create-blog', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-    //console logging data for debugging: 
-    console.log('newBlog', newBlog);
     //if data okay, post newBlog
     res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
 //Edit a blog
 router.get('/:id/edit-blog', (req, res) => {
   const blog = {
