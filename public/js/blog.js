@@ -51,12 +51,15 @@ const createBlogHandler = async (event) => {
     }
   };
   
+//this 3 eventlisteners are not working for somereason.
   document
     .querySelector('.create-blog-form')
-    .addEventListener('click', createBlogHandler);
+    .addEventListener('submit', createBlogHandler);
 
   document
     .querySelector('.edit-blog-form')
-    .addEventListener('click', editBlogHandler);
+    .addEventListener('submit', editBlogHandler);
 
-  document.querySelector('.createBlogBtn').addEventListener('click', createBlogHandler);
+  document.querySelector('.createBlogBtn').addEventListener('click', ()=> {
+    document.location.replace('/api/blogs/create-blog');
+  });
