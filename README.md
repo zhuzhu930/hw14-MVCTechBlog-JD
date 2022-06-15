@@ -35,12 +35,13 @@ Terminal side:
 
 Screenshots:
 
-- Login: ![login](assets/images/loginpage.png)
-- Homepage: ![Homepage](assets/images/homepage.png)
-- Dashboard: ![Dashboard](assets/images/dashboard.png)
-- Single Blog: ![Single Blog](assets/images/singleBlogpage.png)
-- Create a blog: ![Create Blog](assets/images/createBlog.png)
-- Edit a blog: ![Create Blog](assets/images/createBlog.png)
+- Login: ![login](public/images/login.png)
+- Homepage: ![Homepage](public/images/homepage.png)
+- Dashboard: ![Dashboard](public/images/dashboard.png)
+- Single Blog: ![Single Blog](public/images/singleBlogPage.png)
+- Create a blog: ![Create Blog](public/images/addNewBlog.png)
+- Edit a blog: ![Create Blog](public/images/editBlog.png)
+- Created Test Blog: ![Created Test Blog](public/images/createTestBlog.png)
 
 ## License
 
