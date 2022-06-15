@@ -4,7 +4,7 @@ const commentFormHandler = async (event) => {
     const comment = document.querySelector('#commentContent').value.trim();
   //need to define id: 
     if (comment) {
-      const response = await fetch('/api/blogs/:id', {
+      const response = await fetch('/blogs/:id', {
         method: 'POST',
         body: JSON.stringify({ comment }),
 
@@ -12,7 +12,7 @@ const commentFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/api/blogs/:id');
+        document.location.replace('/blogs/:id');
       } else {
         alert('Failed to post a comment');
       }
