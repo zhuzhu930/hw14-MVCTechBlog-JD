@@ -1,65 +1,96 @@
-# hw14-MVCTechBlog-JD
+# MVC Tech Blog
 
-A CMS-style blog site using Handlebars.js, Sequelize and Express-session npm pakcage.
+Designed by: Jessie Doherty
 
-Plan:
+## Description
 
-1. writing sample html and css; ----almost done;
-2. writing schema.sql, models and seeds
+A Tech Blog page that follows the MVC web development structure. The user can view all blogs, add a new blog, edit a blog, delete a blog, as well as add a comment to a blog.
 
-- schema.sql should have one database: blogs_db---done
-- models:
+- What was your motivation?
+- Answer: Gather a collection of technology-related blogs for people who're interested in this topic. Build a tech community based on the discussion.
+- Why did you build this project?
+- Answer: Build a platform for the technology community to view and discuss hot topics in the tech field.
+- What problem does it solve?
+- Answer: Collect, view, post, edit, comment or delete blogs.
+- What did you learn?
+- Answer: Express.js, Node.js, handlebars, npm packages, HTML, CSS, JavaScript, front-end and back-end coordinated development, MySQL and Sequelize, etc.
 
-  - User model, with (id, username, password), id will be a primary key
-    ---done
-  - Blog model, with (id, title, content, author, created_date, user_id); user_id will be a foreign key;---done
-  - comment model, with (id, comment, user_id, blog_id);
-    user_id is a foreign key, and blog_id is a foreign key; ---done
+## Installation
 
-  - write index.js in model ---done
-    one user has many blogs,
-    one blog has one user via user_id
+Please tell us the 3 simple steps for installing your app.
 
-  one user has many comment,
-  one comment has one user via user_id
+- Step 1: In VS code or Heroku page, run 'npm run start', then click on the url link to open the page.
+- Step 2: Then you'll be able to see the homepage where a collection of blogs are displayed, then login or signup to get into the page.
+- Step 3: Once logged in or signed up, the user can view, post, edit, comment or delete on any blog, once done, the user can logout to return to the homepage.
 
-  one blog has many comment,
-  one comment has one blog via blog_id
+## Usage
 
-- based on the models, write userData.json and blogData.json and seeds.js to seed to database. ---done
+- Use VS Code or the deployed Heroku page to get into the website.
+- Screenshots of the App
 
----model folder, seed folder, db folder all done...database seeded successfully.
+Terminal side:
 
-3. separate sample html into handlebars, including partials.
+- npm run start: ![npm](public/images/npmrunstart.png)
+- seed the database: ![seed](public/images/seedthedatabase.png)
 
-- break out sample html into main, homepage and partials, by using handlebars. ---mainly done, but need to test all files later
+Screenshots:
 
-4. write js files in the public folder, including login.js, logout.js, probably signup.js and comment.js
+- Login: ![login](assets/images/loginpage.png)
+- Homepage: ![Homepage](assets/images/homepage.png)
+- Dashboard: ![Dashboard](assets/images/dashboard.png)
+- Single Blog: ![Single Blog](assets/images/singleBlogpage.png)
+- Create a blog: ![Create Blog](assets/images/createBlog.png)
+- Edit a blog: ![Create Blog](assets/images/createBlog.png)
 
-5. write routes, to send correct page to certain stage.
+## License
 
-6. debug.
+    MIT License
 
-Homework session:
+    Copyright (c) 2022 Jessie Doherty
 
-- question: edit-blog.handlebars should be checked.
-- In the blog model, maybe add a column of comment directly to the blog, or link the comment model to the blog.
-- Trey's model is set up as Post, not Blog
-- comment route and blog route works, use api/comment and api/blog
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
 
-Routes: 
-Working:
-Homepage is showing correctly
-Dashboard is showing correctly
-Logout route is showing correctly
-http://localhost:3001/api/blogs working
-http://localhost:3001/create-blog
-http://localhost:3001/edit-blog
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
 
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
 
+    ---
 
-Not working
-Blog-page not working
-Login route is not showing correctly http://localhost:3001/login
-http://localhost:3001/api/comments not working
-http://localhost:3001/api/users not working
+## Challengies
+
+- Express.js routes are not that intuitive.
+- I was not able to fix the following features: edit a blog, delete a blog, add a comment.
+
+## 🏆 Miscellaneous
+
+## Badges
+
+![Readme_Generator](https://img.shields.io/badge/Readme.md-Generator%20v1.0-blue)
+
+![MVC Techblog](https://img.shields.io/badge/Tech%20Blog-MVC-yellowgreen)
+
+## Features
+
+- A simple website that can collect, view, post, edit comment or delete blogs.
+
+## How to Contribute
+
+- This repo is open to the public free of charge. I welcome any contribution to this repo.
+
+## URLs
+
+- Github Repo: [GitHub link](https://github.com/zhuzhu930/hw14-MVCTechBlog-JD)
+
+- Heroku Deployment: [Heroku link](https://stormy-brushlands-40679.herokuapp.com/)
