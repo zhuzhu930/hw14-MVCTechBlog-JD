@@ -1,16 +1,6 @@
 const router = require('express').Router();
-const { User, Blog, Comment } = require('../../models');
+const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-// Get all Blogs api/blogs/
-// router.get('/', (req, res) => {
-//   res.render('homepage');
-// });
-
-// Get a blog: api/blogs/:id not working
-
-  
-  
 
 //Create a blog, use api/blogs/create-blog: NOT working
 
@@ -27,8 +17,7 @@ router.post('/create-blog', withAuth, async (req, res) => {
   }
 });
 
-//Edit a blog
-
+//Edit a blog route: 
 router.post('/:id/edit-blog', withAuth, async (req, res) => {
   try {
     const editedBlog = await Blog.create({
@@ -44,8 +33,8 @@ router.post('/:id/edit-blog', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-//this route should be correct. 
-//Route: api/blogs/:id
+
+//delete route: 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({

@@ -1,24 +1,27 @@
 <section id="dashboardPage">
         <h2 class="sectionHead">Dashboard</h2>
-        {{#if blogs}}
-          {{#each blogs as |blog| }}
-            <section id="blogPost">
-                <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
-                      <h2>{{title}}</h2>
-                      <p>Posted by: {{blog.user.username}} on {{createdAt}}</p>
-                    </div>
-                    <div class="blogTextArea" id="blogTextArea">
-                      <p>{{content}}</p>
-                    </div>
-                    {{!-- Need to style these 3 buttons to be a consistent look --}}
-                    <div class="dashFeatureBtns">
-                      <a class="featureBtn" href="/blogs/{{id}}">Show this blog</a>
-                      <a class="featureBtn" href="/api/blogs/{{id}}/edit-blog">Edit this blog</a>
-                      <button class="featureBtn" id="deleteBlogBtn">Delete the blog</button>
-                    </div>        
-            </section>
-          {{/each}}
-        {{/if}}
+          {{#if blogs.length}}
+          <div class="blog-list">
+            <h3>Current Blogs:</h3>
+            {{#each blogs as |blog| }}
+              <section id="blogPost">
+                  <div class="sectionHead blogTitleAndTime" id="blogTitleAndTime">
+                        <h2>{{title}}</h2>
+                        <p>Posted by: {{blog.user.username}} on {{createdAt}}</p>
+                      </div>
+                      <div class="blogTextArea" id="blogTextArea">
+                        <p>{{content}}</p>
+                      </div>
+                      {{!-- Need to style these 3 buttons to be a consistent look --}}
+                      <div class="dashFeatureBtns">
+                        <a class="featureBtn" href="/blogs/{{id}}">Show this blog</a>
+                        <a class="featureBtn" href="/api/blogs/{{id}}/edit-blog">Edit this blog</a>
+                        <a class="featureBtn" href="/api/blogs/{{id}}" id="deleteBlogBtn" data-id="{{blog.id}}">Delete the blog</a>
+                      </div>        
+              </section>
+            {{/each}}
+          {{/if}}
+        </div>
 
         <div class="flex">
           {{!-- <button class="btn newPostBtn"> --}}

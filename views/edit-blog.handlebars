@@ -1,4 +1,4 @@
-<section id="editBlog">
+<section id="editBlog" data-id='{{blog.id}}'>
     <div>
       <h2 class="sectionHead">Edit A Blog</h2>
     </div>
@@ -15,7 +15,7 @@
                 rows="10"
               >{{blog.content}}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary" id="editBlogSave" data-id=`{{blog.id}}`>Save</button>
+            <button type="submit" class="btn btn-primary" id="editBlogSave" >Save</button>
           </form>
 </section>
 {{!-- edit a blog js file --}}

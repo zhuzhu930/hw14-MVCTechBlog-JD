@@ -50,6 +50,24 @@ const createBlogHandler = async (event) => {
       }
     }
   };
+
+  const delBlogHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  // fetch route is right, but can't have an id to identify the blog.
+  // maybe move the delete button to the show blog page...
+      const response = await fetch(`/api/blogs/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        window.alert('This blog is deleted successfully!')
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to delete blog');
+      }
+    }
+  };
   
 //this 3 eventlisteners are not working for somereason.
   document
@@ -60,6 +78,6 @@ const createBlogHandler = async (event) => {
     .querySelector('.edit-blog-form')
     .addEventListener('submit', editBlogHandler);
 
-  document.querySelector('.createBlogBtn').addEventListener('click', ()=> {
-    document.location.replace('/api/blogs/create-blog');
-  });
+  document
+    .querySelector('.blog-list')
+    .addEventListener('submit', delBlogHandler);
