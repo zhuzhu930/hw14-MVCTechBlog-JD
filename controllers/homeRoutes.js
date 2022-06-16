@@ -36,6 +36,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//Route to get a single blog: 
 router.get('/blogs/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
