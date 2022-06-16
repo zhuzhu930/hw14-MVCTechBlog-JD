@@ -31,10 +31,13 @@ const createBlogHandler = async (event) => {
   
     const title = document.querySelector('#blogTitle').value.trim();
     const content = document.querySelector('#blogContent').value.trim();
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
   
-    if (title && content) {
-      const response = await fetch('/api/blogs/:id/edit-blog', {
-        method: 'POST',
+    const response = await fetch(
+        //check this route: 
+        `/api/blogs/${id}`, {
+        //update a blog use PUT
+        method: 'PUT',
         body: JSON.stringify({ 
             title,
             content, 
@@ -43,13 +46,12 @@ const createBlogHandler = async (event) => {
       });
 
       if (response.ok) {
-        //?double check the redirect
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to edit a blog');
+        alert(response.statusText); 
       }
-    }
-  };
+    };
+
 
   const delBlogHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {

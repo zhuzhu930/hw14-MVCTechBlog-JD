@@ -57,4 +57,45 @@ router.get('/', withAuth, async (req, res) =>
     }    
 });
 
+//edit a blog route: dashboard/edit/:id
+router.get(
+    //Old route: '/api/blogs/:id/edit-blog', 
+    '/edit/:id', withAuth, async (req, res) => 
+    {
+        try {
+            const blogData = await Blog.findOne({
+                where: {
+                    //use blog id 
+                    id: req.params.id
+                }, 
+                attributes: [
+                    'id', 'title', 'content'
+                ],
+                include: [
+                    {
+                        model: Comment, 
+                        include: {
+                            model: User, 
+                            attributes: ['username']
+                        }
+                    },
+                    {
+                        model: User, 
+                        attributes: ['username']
+                    }
+                ]
+            }); 
+    
+            const blog = blogData.get({ plain: true });
+
+            res.render('edit-blog', { 
+                ...blog, 
+                logged_in: true 
+            }); 
+        } catch (err) {
+            res.status(500).json(err)
+        }  
+  });
+
+
 module.exports = router;

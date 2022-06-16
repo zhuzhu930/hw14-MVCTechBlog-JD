@@ -6,14 +6,14 @@
           <form class="flex form edit-blog-form">
             <div class="formInput flex">
               <label for="title" class="form-label">{{blog.title}}</label>
-              <input type="text" id="blogTitle">
+              <input type="text" id="blogTitle" value="{{blog.title}}">
               <label for="content" class="form-label">Content</label>
               <textarea
                 name="blogContent"
                 id="blogContent"
                 cols="80"
                 rows="10"
-              >{{blog.content}}</textarea>
+              value="{{blog.content}}">{{blog.content}}</textarea>
             </div>
             <button type="submit" class="btn btn-primary" id="editBlogSave" >Save</button>
           </form>

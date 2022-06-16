@@ -114,18 +114,19 @@ router.get('/api/blogs/create-blog', (req, res) => {
   res.render('create-blog');
 });
 
-router.get('/api/blogs/:id/edit-blog', (req, res) => {
-  const blog = {
-    id: req.params.id,
-    title: req.body.title,
-    content: req.body.content,
-  }
+//moved to dashboardRoutes
+// router.get('/api/blogs/:id/edit-blog', (req, res) => {
+//   const blog = {
+//     id: req.params.id,
+//     title: req.body.title,
+//     content: req.body.content,
+//   }
 
-  res.render('edit-blog', {
-    ...blog,
-    logged_in: true,
-  });
-});
+//   res.render('edit-blog', {
+//     ...blog,
+//     logged_in: true,
+//   });
+// });
 
 
 module.exports = router;
