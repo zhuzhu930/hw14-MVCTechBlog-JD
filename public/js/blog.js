@@ -90,4 +90,4 @@ const createBlogHandler = async (event) => {
 
   document
     .querySelector('#deleteBlogBtn')
-    .addEventListener('click', delBlogHandler);
+    .addEventListener('submit', delBlogHandler);

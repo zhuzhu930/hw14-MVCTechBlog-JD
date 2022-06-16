@@ -96,6 +96,7 @@ router.get(
         }  
   });
 
+// update the blog, NOT working
 router.put('/edit/:id', withAuth, async (req, res) => {
     try {
       const editedBlog = await Blog.update(
@@ -111,7 +112,7 @@ router.put('/edit/:id', withAuth, async (req, res) => {
       );
       //console logging data for debugging: 
       console.log('editedBlog', editedBlog);
-      //if data okay, post newBlog
+      //if data okay, post edited blog
       res.status(200).json(editedBlog);
     } catch (err) {
       res.status(400).json(err);
