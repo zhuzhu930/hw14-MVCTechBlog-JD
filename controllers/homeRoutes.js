@@ -6,25 +6,8 @@ const withAuth = require('../utils/auth');
 //Homepage Route:
 router.get('/', async (req, res) => {
   try {
-    //GET all blog data and JOIN with user data
-    //debugging from here v1: 
-    // const blogData = await Blog.findAll({
-    //   include: [
-    //     {
-    //       model: User, 
-    //       attributes: ['username'],
-    //     },
-    //   ],
-    // });
-    // debugging from up: 
-
+    //GET all blog data and JOIN with user and comment data
     const blogData = await Blog.findAll({
-      // attributes: [
-      //   'id',
-      //   'title',
-      //   'content',
-      //   'created_at'
-      // ], 
       include: [
         {
           model: Comment, 
