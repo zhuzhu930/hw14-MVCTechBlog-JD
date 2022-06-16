@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
+const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 
-//this home get route is edited, should be correct.
+//Homepage Route:
 router.get('/', async (req, res) => {
   try {
     //GET all blog data and JOIN with user data
