@@ -7,13 +7,38 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     //GET all blog data and JOIN with user data
+    //debugging from here v1: 
+    // const blogData = await Blog.findAll({
+    //   include: [
+    //     {
+    //       model: User, 
+    //       attributes: ['username'],
+    //     },
+    //   ],
+    // });
+    // debugging from up: 
+
     const blogData = await Blog.findAll({
+      // attributes: [
+      //   'id',
+      //   'title',
+      //   'content',
+      //   'created_at'
+      // ], 
       include: [
         {
-          model: User, 
-          attributes: ['username'],
+          model: Comment, 
+          attributes: ['id', 'comment', 'blog_id', 'user_id'],
+          include: {
+            model: User, 
+            attributes: ['id', 'username']
+          }
         },
-      ],
+        {
+          model: User, 
+          attributes: ['id', 'username']
+        }
+      ]
     });
     // Serialize the data
     const blogs = blogData.map((blog) => blog.get({ plain: true })); 
