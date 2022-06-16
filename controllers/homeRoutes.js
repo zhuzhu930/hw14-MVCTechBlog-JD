@@ -37,7 +37,8 @@ router.get('/', async (req, res) => {
 });
 
 //Route to get a single blog: 
-router.get('/blogs/:id', async (req, res) => {
+//route changed from /blogs/:id to api/blogs/:id
+router.get('/api/blogs/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -110,22 +111,24 @@ router.get('/logout', (req, res) => {
   }
 });
 
-router.get('/api/blogs/create-blog', (req, res) => {
-  res.render('create-blog');
-});
+//Move to dashboardRoutes: 
+// router.get('/api/blogs/create-blog', (req, res) => {
+//   res.render('create-blog');
+// });
 
-router.get('/api/blogs/:id/edit-blog', (req, res) => {
-  const blog = {
-    id: req.params.id,
-    title: req.body.title,
-    content: req.body.content,
-  }
+//moved to dashboardRoutes
+// router.get('/api/blogs/:id/edit-blog', (req, res) => {
+//   const blog = {
+//     id: req.params.id,
+//     title: req.body.title,
+//     content: req.body.content,
+//   }
 
-  res.render('edit-blog', {
-    ...blog,
-    logged_in: true,
-  });
-});
+//   res.render('edit-blog', {
+//     ...blog,
+//     logged_in: true,
+//   });
+// });
 
 
 module.exports = router;

@@ -7,7 +7,7 @@ const createBlogHandler = async (event) => {
     const content = document.querySelector('#blogContent').value.trim();
   
     if (title && content) {
-      const response = await fetch('/api/blogs/create-blog', {
+      const response = await fetch('/dashboard/create', {
         method: 'POST',
         body: JSON.stringify({ 
             title,
@@ -31,10 +31,13 @@ const createBlogHandler = async (event) => {
   
     const title = document.querySelector('#blogTitle').value.trim();
     const content = document.querySelector('#blogContent').value.trim();
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
   
-    if (title && content) {
-      const response = await fetch('/api/blogs/:id/edit-blog', {
-        method: 'POST',
+    const response = await fetch(
+        //check this route: 
+        `/dashboard/edit/${id}`, {
+        //update a blog use PUT
+        method: 'PUT',
         body: JSON.stringify({ 
             title,
             content, 
@@ -43,21 +46,29 @@ const createBlogHandler = async (event) => {
       });
 
       if (response.ok) {
-        //?double check the redirect
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to edit a blog');
+        alert(response.statusText); 
       }
-    }
-  };
+    };
+
 
   const delBlogHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+    event.preventDefault();
+
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
   // fetch route is right, but can't have an id to identify the blog.
   // maybe move the delete button to the show blog page...
       const response = await fetch(`/api/blogs/${id}`, {
         method: 'DELETE',
+        body: JSON.stringify({
+          blog_id: id
+        }), 
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
   
       if (response.ok) {
@@ -66,8 +77,7 @@ const createBlogHandler = async (event) => {
       } else {
         alert('Failed to delete blog');
       }
-    }
-  };
+    }; 
   
 //this 3 eventlisteners are not working for somereason.
   document
@@ -79,5 +89,5 @@ const createBlogHandler = async (event) => {
     .addEventListener('submit', editBlogHandler);
 
   document
-    .querySelector('.blog-list')
-    .addEventListener('submit', delBlogHandler);
+    .querySelector('#deleteBlogBtn')
+    .addEventListener('click', delBlogHandler);
