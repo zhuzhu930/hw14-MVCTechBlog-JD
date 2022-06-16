@@ -69,26 +69,26 @@ router.get('/blogs/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session Id
-    const userData = await User.findByPk(req.session.user_id, {
-      //not showing password to protect user privacy
-      attributes: { exclude: ['password']},
-      include: [{ model: Blog }],
-    });
-    // Serialize user data
-    const user = userData.get({ plain: true });
+// router.get('/dashboard', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session Id
+//     const userData = await User.findByPk(req.session.user_id, {
+//       //not showing password to protect user privacy
+//       attributes: { exclude: ['password']},
+//       include: [{ model: Blog }],
+//     });
+//     // Serialize user data
+//     const user = userData.get({ plain: true });
 
-    res.render('dashboard', {
-      //destructuring user
-      ...user, 
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err)
-  }
-});
+//     res.render('dashboard', {
+//       //destructuring user
+//       ...user, 
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err)
+//   }
+// });
 
 //?why is a login in the homeroutes and a login in the userroutes?
 router.get('/login', (req, res) => {
