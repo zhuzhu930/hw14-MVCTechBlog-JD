@@ -5,7 +5,13 @@ const withAuth = require('../../utils/auth');
 // Get comment page: api/comments/
 router.get('/', async (req, res) => {
   //add comment data
-  res.render('comment');
+  Comment.findAll({})
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    }); 
+  // res.render('comment');
 });
 
 // Get a comment: api/comments/:id
