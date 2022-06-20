@@ -14,8 +14,8 @@
                       </div>
                       {{!-- Need to style these 3 buttons to be a consistent look --}}
                       <div class="dashFeatureBtns">
-                        <a class="featureBtn" href="/api/blogs/{{id}}">Show this blog</a>
-                        <a class="featureBtn" href="/dashboard/edit/{{id}}">Edit this blog</a>
+                        <a class="featureBtn" href="/blogs/{{id}}">Show this blog</a>
+                        <a class="featureBtn" href="/api/blogs/{{id}}/edit">Edit this blog</a>
                         {{!-- <a class="featureBtn" href="/api/blogs/{{id}}" id="deleteBlogBtn" data-id="{{blog.id}}">Delete the blog</a> --}}
                       </div>        
               </section>
@@ -25,7 +25,7 @@
 
         <div class="flex">
           {{!-- <button class="btn newPostBtn"> --}}
-            <a class="btn newPostBtn createBlogBtn" href="/dashboard/create">+ New Post</a>
+            <a class="btn newPostBtn createBlogBtn" href="/api/blogs/create">+ New Post</a>
             {{!-- </button> --}}
         </div>
 </section>
