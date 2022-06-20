@@ -3,7 +3,7 @@ const { User, Blog, Comment } = require('../models');
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 
-//Homepage Route:
+//Homepage Route: localhost:3001/
 router.get('/', async (req, res) => {
   try {
     //GET all blog data and JOIN with user and comment data
@@ -37,8 +37,7 @@ router.get('/', async (req, res) => {
 });
 
 //Route to get a single blog: 
-//route changed from /blogs/:id to api/blogs/:id
-router.get('/api/blogs/:id', async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -69,29 +68,7 @@ router.get('/api/blogs/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
-// router.get('/dashboard', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session Id
-//     const userData = await User.findByPk(req.session.user_id, {
-//       //not showing password to protect user privacy
-//       attributes: { exclude: ['password']},
-//       include: [{ model: Blog }],
-//     });
-//     // Serialize user data
-//     const user = userData.get({ plain: true });
-
-//     res.render('dashboard', {
-//       //destructuring user
-//       ...user, 
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err)
-//   }
-// });
-
-//?why is a login in the homeroutes and a login in the userroutes?
+//login
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     // if a user is logged in, redirect to dashboard
@@ -102,7 +79,7 @@ router.get('/login', (req, res) => {
   };
 });
 
-//Need to figure out this page: 
+//logout: 
 router.get('/logout', (req, res) => {
   if(!req.session.logged_in) {
     // res.redirect('/api/users/logout');
@@ -111,24 +88,24 @@ router.get('/logout', (req, res) => {
   }
 });
 
-//Move to dashboardRoutes: 
-// router.get('/api/blogs/create-blog', (req, res) => {
-//   res.render('create-blog');
-// });
+//Create blogs: 
+router.get('/api/blogs/create', (req, res) => {
+  res.render('create-blog');
+});
 
-//moved to dashboardRoutes
-// router.get('/api/blogs/:id/edit-blog', (req, res) => {
-//   const blog = {
-//     id: req.params.id,
-//     title: req.body.title,
-//     content: req.body.content,
-//   }
+//Edit a blog
+router.get('/api/blogs/:id/edit', (req, res) => {
+  const blog = {
+    id: req.params.id,
+    title: req.body.title,
+    content: req.body.content,
+  }
 
-//   res.render('edit-blog', {
-//     ...blog,
-//     logged_in: true,
-//   });
-// });
+  res.render('edit-blog', {
+    ...blog,
+    logged_in: true,
+  });
+});
 
 
 module.exports = router;

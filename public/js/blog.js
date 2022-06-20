@@ -1,4 +1,3 @@
-// const { response } = require("express");
 //Create a blog
 const createBlogHandler = async (event) => {
     event.preventDefault();
@@ -7,7 +6,7 @@ const createBlogHandler = async (event) => {
     const content = document.querySelector('#blogContent').value.trim();
   
     if (title && content) {
-      const response = await fetch('/dashboard/create', {
+      const response = await fetch('/api/blogs/create', {
         method: 'POST',
         body: JSON.stringify({ 
             title,
@@ -35,7 +34,7 @@ const createBlogHandler = async (event) => {
   
     const response = await fetch(
         //check this route: 
-        `/dashboard/edit/${id}`, {
+        `/api/blogs/${id}/edit`, {
         //update a blog use PUT
         method: 'PUT',
         body: JSON.stringify({ 
@@ -90,4 +89,4 @@ const createBlogHandler = async (event) => {
 
   document
     .querySelector('#deleteBlogBtn')
-    .addEventListener('click', delBlogHandler);
+    .addEventListener('submit', delBlogHandler);

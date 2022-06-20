@@ -19,10 +19,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  res.render('login');
-})
-
 //api/users/login
 router.post('/login', async (req, res) => {
   try {
