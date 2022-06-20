@@ -69,7 +69,7 @@ router.get('/blogs/:id', async (req, res) => {
 });
 
 //login
-router.get('/login', (req, res) => {
+router.get('/api/users/login', (req, res) => {
   if (req.session.logged_in) {
     // if a user is logged in, redirect to dashboard
     res.redirect('/dashboard');
@@ -80,7 +80,7 @@ router.get('/login', (req, res) => {
 });
 
 //logout: 
-router.get('/logout', (req, res) => {
+router.get('/api/users/logout', (req, res) => {
   if(!req.session.logged_in) {
     // res.redirect('/api/users/logout');
     res.render('login');
